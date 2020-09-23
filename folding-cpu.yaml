@@ -40,7 +40,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: fah-cpu
-          image: "smbishop/fah-covid:latest"
+          image: "richstokes20/fah-covid:latest"
           # --run-as UID should match runAsUser value in containers securityContext
           command:
             - "/usr/bin/FAHClient"
@@ -79,7 +79,7 @@ spec:
       initContainers:
         - name: copy-config
           imagePullPolicy: Always
-          image: "smbishop/fah-covid:latest"
+          image: "richstokes20/fah-covid:latest"
           command:
             - "sh"
             - "-c"
