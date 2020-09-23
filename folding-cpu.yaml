@@ -17,7 +17,7 @@ spec:
   selector:
     matchLabels:
       app: fah-cpu
-  replicas: 2 # Set number of replicas to run - one replica per node
+  replicas: 4 # Set number of replicas to run - one replica per node
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -40,7 +40,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: fah-cpu
-          image: "richstokes20/fah-covid:latest"
+          image: "smbishop/fah-covid:latest"
           # --run-as UID should match runAsUser value in containers securityContext
           command:
             - "/usr/bin/FAHClient"
@@ -53,7 +53,7 @@ spec:
             - "--gpu=false"
           resources:
             limits:
-              cpu: 1000m # How much CPU you wish to donate per node
+              cpu: 4 # How much CPU you wish to donate per node
               memory: 512Mi
             requests:
               cpu: 100m
@@ -79,7 +79,7 @@ spec:
       initContainers:
         - name: copy-config
           imagePullPolicy: Always
-          image: "richstokes20/fah-covid:latest"
+          image: "smbishop/fah-covid:latest"
           command:
             - "sh"
             - "-c"
@@ -114,9 +114,9 @@ data:
       -->
 
       <!-- User Information -->
-      <user value=""/> <!-- Enter your user name here -->
-      <team value=""/>         <!-- Your team number -->
-      <passkey value=""/>       <!-- 32 hexadecimal characters if provided -->
+      <user value="smbishop"/> <!-- Enter your user name here -->
+      <team value="240445"/>         <!-- Your team number -->
+      <passkey value="3fe9adcfda2862e93fe9adcfda2862e9"/>       <!-- 32 hexadecimal characters if provided -->
 
       <power value="full"/>     <!-- Throttling this at K8s level -->
       <gpu value="false"/>      <!-- If true, attempt to autoconfigure GPUs -->
