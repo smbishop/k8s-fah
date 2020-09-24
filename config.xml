@@ -5,9 +5,9 @@
   -->
 
   <!-- User Information -->
-  <user value=""/>         <!-- Enter your user name here -->
-  <team value=""/>         <!-- Your team number -->
-  <passkey value=""/>      <!-- 32 hexadecimal characters if provided -->
+  <user value="smbishop"/>         <!-- Enter your user name here -->
+  <team value="240445"/>         <!-- Your team number -->
+  <passkey value="3fe9adcfda2862e93fe9adcfda2862e9"/>      <!-- 32 hexadecimal characters if provided -->
 
   <power value="full"/>    <!-- Throttling this at K8s level -->
   <gpu value="true"/>      <!-- If true, attempt to autoconfigure GPUs -->
